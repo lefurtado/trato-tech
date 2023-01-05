@@ -230,7 +230,15 @@ const initialState = [{
 
 const itensSlice = createSlice({
     name: 'itens',
-    initialState
-})
+    initialState,
+    reducers: {
+        mudarFavorito: (state, params) => {
+            console.log('params: ', state)
+            console.log('params: ', params)
+        }
+    }
+});
+
+export const { mudarFavorito } = itensSlice.actions;
 
 export default itensSlice.reducer;
