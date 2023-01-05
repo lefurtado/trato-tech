@@ -2,6 +2,7 @@ import Header from "components/Header/index";
 import { useSelector } from "../../../node_modules/react-redux/es/exports";
 import { useParams } from "react-router-dom";
 import styles from './Categoria.module.scss';
+import Item from "components/Item/index";
 
 export default function Categoria() {
     const { nomeCategoria } = useParams();
@@ -19,9 +20,7 @@ export default function Categoria() {
             />
             <div className={styles.itens}>
                 {itens?.map(item => (
-                    <div key={item.id}>
-                        {item.titulo}
-                    </div>
+                    <Item key={item.id} {...item} />
                 ))}
             </div>
         </div>
